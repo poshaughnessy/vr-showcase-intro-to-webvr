@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Intro to WebVR</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+
+    <link rel="icon" type="image/png" href="img/favicon.png">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="css/theme/futuretech.css" id="theme">
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div class="reveal">
+
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+
+            <section class="title">
+                <h1>Virtual Reality<br/> in the Browser</h1>
+                <h2>An intro to WebVR</h2>
+                <p class="small">Peter O'Shaughnessy <span class="subtle">|</span> <a href="https://www.twitter.com/poshaughnessy">@poshaughnessy</a> <!--<span class="subtle">|</span> Press <strong>f</strong> for full screen, <strong>h</strong> for high contrast</p>-->
+            </section>
+
+            <section>
+                <!-- Intro the fact we're an education company so interested in how VR could help people to learn about things -->
+                <img width="80%" src="img/Pearson_Without_Strapline_Trans_LoRes.png" alt="Pearson"/>
+                <img width="70%" src="img/ft-h-white-trans.png" alt="Future Tech"/>
+            </section>
+
+            <section>
+                <h3>TODO show Fishfinder</h3>
+            </section>
+
+            <section>
+                <h3>But what about the Web?</h3>
+                <!-- I don't know Unity... I don't know OpenGL... I'm rubbish with C++... Like a lot of people I'm mainly
+                <!-- a Web developer and I generally develop in JavaScript... -->
+            </section>
+
+            <section>
+                <!-- Imagine if we could open up the tools to build VR experiences to Web developers -->
+                <!-- Imagine if the Web could evolve into an interconnected network of open worlds... -->
+            </section>
+
+            <section>
+                <h3>It's the stuff of science fiction...</h3>
+                <div>
+                    <img src="img/universe_from_a_meadow_by_mind_criminal-d496i3j.png"/>
+                    <p class="caption"><a href="http://mind-criminal.deviantart.com/art/Universe-From-a-Meadow-257284639">mind-criminal</a></p>
+                </div>
+            </section>
+
+            <section>
+                <h3>...But just in the last few weeks:</h3>
+                <div class="fragment">
+                    <ul class="more-text">
+                        <li><a href="http://blog.ludei.com/webgl-ios-8-safari-webview/">Apple embrace WebGL</a></li>
+                        <li><a href="https://developers.google.com/cardboard/">Google unveil Cardboard</a></li>
+                        <li><a href="http://blog.bitops.com/blog/2014/06/26/first-steps-for-vr-on-the-web/">Mozilla release VR Firefox builds</a></li>
+                        <li><a href="http://blog.tojicode.com/2014/07/bringing-vr-to-chrome.html">Google release VR Chrome builds</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h3>Browsers implementing:</h3>
+                <ul class="more-text fragment">
+                    <li>Device discovery</li>
+                    <li>Full screen extensions</li>
+                    <li>Sensor integration, e.g. orientation</li>
+                    <li>Rendering for different hardware</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>&ldquo;WebVR&rdquo;</h2>
+                <ul class="more-text fragment">
+                    <li>"Version Zero"</li>
+                    <li>Not even in alpha channels yet</li>
+                </ul>
+            </section>
+
+            <section data-transition="fadesibling">
+                <h3>WebGL</h3>
+                <img src="img/oculus-stereo-normal.jpg" alt="Stereo with no distortion"/>
+                <p class="caption"><a href="http://www.oculusvr.com/">Oculus Rift</a></p>
+            </section>
+
+            <section data-transition="fade">
+                <h3>WebGL</h3>
+                <img src="img/oculus-stereo-distortion.jpg" alt="Stereo with distortion for Oculus"/>
+                <p class="caption"><a href="http://www.oculusvr.com/">Oculus Rift</a></p>
+            </section>
+
+            <section data-transition="fadesibling">
+                <h3>CSS 3D</h3>
+                <img src="img/css3d-globe.jpg" alt="CSS3D Globe"/>
+                <p class="caption"><a href="http://www.edankwan.com/lab/css3dEarth">edankwan.com</a></p>
+            </section>
+
+            <section>
+                <h2>Code</h2>
+                <h3>Warning: APIs will change</h3>
+            </section>
+
+            <section data-transition="fadesibling">
+                <pre><code class="javascript">if( navigator.getVRDevices ) {
+    // Chrome
+    navigator.getVRDevices().then( vrDeviceCallback );
+
+} else if( navigator.mozGetVRDevices ) {
+    // Firefox
+    navigator.mozGetVRDevices( vrDeviceCallback );
+}
+</code></pre>
+            </section>
+
+            <section data-transition="fadesibling">
+                <pre><code class="javascript">function vrDeviceCallback( vrDevices ) {
+    for( var i=0; i < vrDevices.length; i++ ) {
+        // If instance of HMDVRDevice...
+        // If instance of PositionSensorVRDevice...
+    }
+}</code></pre>
+            </section>
+
+            <section data-transition="fadesibling">
+                <pre><code class="javascript">var leftFOV =
+    vrHMD.getRecommendedEyeFieldOfView('left');
+
+var leftTrans = vrHMD.getEyeTranslation('left');
+                </code></pre>
+            </section>
+
+            <section data-transition="fadesibling">
+                <pre><code class="javascript">if( canvas.webkitRequestFullscreen ) {
+    canvas.webkitRequestFullscreen({
+        vrDisplay: hmdDevice });
+
+} else if( container.mozRequestFullScreen ) {
+    container.mozRequestFullScreen({
+        vrDisplay: hmdDevice });
+}</code></pre>
+            </section>
+
+            <section>
+                <h3>Add some Three.js and a dinosaur...</h3>
+            </section>
+
+            <section data-transition="fadesibling">
+                <h4>Oculus Rift TRex!</h4>
+                <video controls>
+                    <source src="movies/trex-oculus-low.mp4" type="video/mp4;"/>
+                </video>
+                <p class="caption">Thanks to <a href="http://www.dk.com/">DK</a> and
+                    <a href="http://www.eyeonline.com/">eyeon Software</a> for lending me the content.</p>
+            </section>
+
+            <section>
+                <h3><a href="http://bit.ly/oculus-example">bit.ly/oculus-example</a></h3>
+                <h4>Code example from Google</h4>
+            </section>
+
+            <section>
+                <h3>Google Cardboard</h3>
+                <img src="img/GoogleCardboardWithPhone-low.jpg" alt="Google Cardboard"/>
+            </section>
+
+            <section>
+                <h3>Coding for Cardboard</h3>
+                <ul class="more-text fragment">
+                    <li>No WebVR support yet</li>
+                    <li>But we can do without it for now...</li>
+                </ul>
+            </section>
+
+            <section data-transition="fadesibling">
+                <pre><code class="javascript">var effect = new THREE.StereoEffect( renderer );
+...
+effect.render( scene, camera );
+
+
+
+                </code></pre>
+            </section>
+
+            <section data-transition="fadesibling">
+                <pre><code class="javascript">var controls = new THREE.DeviceOrientationControls(
+        camera, true);
+
+controls.connect();
+...
+controls.update();
+                </code></pre>
+            </section>
+
+            <section data-transition="fadesibling">
+                <h4>Cardboard TRex! (Minus Cardboard)</h4>
+                <video controls>
+                    <source src="movies/trex-cardboard-low.mp4" type="video/mp4;"/>
+                </video>
+                <p class="caption">Thanks again to <a href="http://www.dk.com/">DK</a> for lending the dinosaur.</p>
+            </section>
+
+            <section>
+                <h3><a href="http://bit.ly/cardboard-example">bit.ly/cardboard-example</a></h3>
+                <h4>Code example from Google</h4>
+            </section>
+
+            <section>
+                <h3>Come and try it out!</h3>
+                <img src="img/trex-closeup.png" alt="TRex close-up"/>
+            </section>
+
+            <section>
+                <h3>Let's start hacking.</h3>
+                <div class="fragment">
+                    <h2>Thank you.</h2>
+                    <p class="medium-link">Slides: <a href="http://bit.ly/interfaces-of-the-future">bit.ly/interfaces-of-the-future</a></p>
+                    <p class="medium-link">web-vr mailing list: <a href="http://bit.ly/web-vr-mailing-list">bit.ly/web-vr-mailing-list</a></p>
+                </div>
+            </section>
+
+        </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+    <script src="js/custom.js"></script>
+
+    <script>
+
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: false,
+            history: true,
+            center: true,
+
+            theme: 'futuretech', // available themes are in /css/theme
+            transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+
+            //backgroundTransition: 'concave',
+
+            width: 1024,
+            height: 768,
+            minScale: 0.2,
+            maxScale: 2.0,
+
+            // Optional libraries used to extend on reveal.js
+            dependencies: [
+                { src: 'lib/js/classList.js', condition: function () {
+                    return !document.body.classList;
+                } },
+                { src: 'plugin/markdown/marked.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                } },
+                { src: 'plugin/markdown/markdown.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                } },
+                { src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                } },
+                { src: 'plugin/zoom-js/zoom.js', async: true, condition: function () {
+                    return !!document.body.classList;
+                } },
+                { src: 'plugin/notes/notes.js', async: true, condition: function () {
+                    return !!document.body.classList;
+                } }
+            ]
+        });
+
+    </script>
+
+</body>
+</html>
