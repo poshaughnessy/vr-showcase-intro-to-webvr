@@ -173,6 +173,9 @@ body.high-contrast {
   font-family: 'arial', 'helvetica', sans-serif;
   line-height: 1em; }
 
+.reveal h5 {
+  font-size: 0.85em; }
+
 .reveal h2 {
   font-size: 2em;
   line-height: 1.2em; }
@@ -267,17 +270,34 @@ body.high-contrast {
 
 section.title h1 {
   margin-bottom: 80px;
-  font-size: 3em; }
+  font-size: 3em;
+  line-height: 1.1em; }
+  section.title h1 span {
+    display: block; }
 section.title h2 {
   margin-bottom: 1em; }
 
 .reveal section img.browser-logo {
-  width: 320px;
-  display: inline; }
+  width: 320px; }
   .reveal section img.browser-logo:nth-child(1) {
     margin-right: 10px; }
 
-.reveal .threejs {
-  margin-top: 30px;
-  font-size: 3em;
-  font-family: 'Inconsolata'; }
+.reveal section img.tech-logo {
+  height: 250px; }
+  .reveal section img.tech-logo:nth-child(1) {
+    margin-right: 30px; }
+
+.reveal section img.browser-logo,
+.reveal section img.tech-logo {
+  display: inline;
+  margin-top: 30px; }
+
+.reveal .threejs span {
+  font-family: 'Inconsolata';
+  font-weight: bold; }
+
+.reveal .hardware-list {
+  margin-top: 30px; }
+
+.reveal .bonus {
+  margin-bottom: 80px; }

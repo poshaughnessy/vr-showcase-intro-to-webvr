@@ -30,31 +30,9 @@
         <div class="slides">
 
             <section class="title">
-                <h1 class="theme-colour">Virtual Reality<br/> in the Browser</h1>
-                <h2>An intro to WebVR</h2>
+                <h1>The <span class="theme-colour">Virtual Reality</span> Web</h1>
+                <!--<h2>An intro to WebVR</h2>-->
                 <p class="small">Peter O'Shaughnessy <span class="subtle">|</span> <a href="https://www.twitter.com/poshaughnessy">@poshaughnessy</a> <!--<span class="subtle">|</span> Press <strong>f</strong> for full screen, <strong>h</strong> for high contrast</p>-->
-            </section>
-
-            <section>
-                <!-- Intro the fact we're an education company so interested in how VR could help people to learn, and ways it might be useful for educators... -->
-                <img width="80%" src="img/Pearson_Without_Strapline_Trans_LoRes.png" alt="Pearson"/>
-                <img width="70%" src="img/ft-h-white-trans.png" alt="Future Tech"/>
-            </section>
-
-            <section>
-                <h4>Project Fishfinder</h4>
-                <!-- Project we worked on with Clinical Assessment team in Pearson (who develop psychometric tests and interventions for psychologists) -->
-                <!-- Idea came from research showing that Virtual Reality can be effective for treating things like phobias and post-traumatic stress disorder -->
-                <!-- An assessment and intervention tool for private practice psychologists working with early adolescents whom might be having problems with bullying -->
-                <!-- Allows an experience of bullying in a safe environment - psychologist can talk with them about how it made them feel, how they would react to it, etc. -->
-                <video controls>
-                    <source src="movies/fishfinder2.3.mp4" type="video/mp4;"/>
-                </video>
-            </section>
-
-            <section>
-                <img src="img/unity-logo-trans.png" alt="Unity"/>
-                <!-- Built with Unity which is great - but proprietary - I don't know Unity... there are many more Web developers... -->
             </section>
 
             <!--
@@ -69,7 +47,8 @@
             -->
 
             <section>
-                <h3>The Virtual Reality Web?</h3>
+                <!-- Imagine a Virtual Reality enabled Web... -->
+                <h3>Imagine the possibilities...</h3>
                 <div>
                     <img src="img/universe_from_a_meadow_by_mind_criminal-d496i3j.jpg" alt="Strange world"/>
                     <p class="caption"><a href="http://mind-criminal.deviantart.com/art/Universe-From-a-Meadow-257284639">mind-criminal</a></p>
@@ -80,6 +59,14 @@
                 <!-- Imagine hopping from website to website in Virtual Reality - if those websites were actually immersive 3d experiences -->
                 <!-- It would be like a network of interconnected worlds... -->
                 <!-- It's the stuff of science fiction... -->
+            </section>
+
+            <section>
+                <h3 class="theme-colour">VR web apps possible <em>now</em></h3>
+                <ul class="fragment hardware-list">
+                    <li>Oculus Rift</li>
+                    <li>Google Cardboard</li>
+                </ul>
             </section>
 
             <section>
@@ -95,6 +82,7 @@
                     </ul>
                 </div>
                 -->
+                <h3>Oculus Rift</h3>
                 <img class="browser-logo" src="img/Mozilla_Firefox_3.5_logo_256.png" alt="Firefox"/>
                 <img class="browser-logo" src="img/Google_Chrome_logo.png" alt="Chrome"/>
             </section>
@@ -117,15 +105,63 @@
                 </ul>
             </section>
 
+            <!--
             <section>
-                <h2>5 minute guide to WebVR development</h2>
+                <h2>5 min guide to WebVR development</h2>
+            </section>
+            -->
+
+            <section>
+                <img class="tech-logo" src="img/webgl-logo-colouradjust.png"/>
+                <img class="tech-logo" src="img/css3-logo.png"/>
+                <!--<h3 class="threejs">three.js</h3>-->
             </section>
 
             <section>
-                <img src="img/webgl-logo-colouradjust.png"/>
-                <h3 class="threejs">three.js</h3>
+                <img class="tech-logo" src="img/webgl-logo-colouradjust.png"/>
             </section>
 
+            <section>
+                <h3><span class="theme-colour">Step 1:</span> Develop WebGL app as usual</h3>
+            </section>
+
+            <section>
+                <h3 class="threejs">I recommend <span>three.js</span></h3>
+                <img src="img/threejs-examples.png" alt="Three.js examples"/>
+                <p class="caption"><a href="http://threejs.org">threejs.org</a></p>
+            </section>
+
+            <section>
+                <h3><span class="theme-colour">Step 2:</span> Add WebVR goodness</h3>
+            </section>
+
+            <section>
+                <h4>Get available VR devices</h4>
+                <pre><code class="javascript">if( navigator.getVRDevices ) {
+    navigator.getVRDevices().then( ... );
+}</code></pre>
+                <h5>(This is the only code I'll show - promise!)</h5>
+            </section>
+
+            <section>
+                <h4>Render scene twice, once for each eye</h4>
+                <img src="img/oculus-stereo-normal.jpg" alt="Stereo with no distortion"/>
+                <p class="caption"><a href="http://www.oculusvr.com/">Oculus Rift</a></p>
+                <h5>WebVR provides recommended eye FOV &amp; translation</h5>
+            </section>
+
+            <section>
+                <h4>Request full screen on the VR device</h4>
+                <img src="img/oculus-stereo-distortion.jpg" alt="Stereo with distortion for Oculus"/>
+                <p class="caption"><a href="http://www.oculusvr.com/">Oculus Rift</a></p>
+                <h5>The browser will handle the distortion!</h5>
+            </section>
+
+            <section>
+                <h3><span class="theme-colour">Step 3:</span> Ensure you have included at least one dinosaur...</h3>
+            </section>
+
+            <!--
             <section>
                 <pre><code class="javascript">
 var ground = new THREE.Mesh(
@@ -150,16 +186,6 @@ scene.add( ground );
 
             <section>
                 <img src="img/webvr-stage1-threejs.png" alt="Three.js scene"/>
-            </section>
-
-            <section>
-                <img src="img/oculus-stereo-normal.jpg" alt="Stereo with no distortion"/>
-                <p class="caption"><a href="http://www.oculusvr.com/">Oculus Rift</a></p>
-            </section>
-
-            <section data-transition="fade">
-                <img src="img/oculus-stereo-distortion.jpg" alt="Stereo with distortion for Oculus"/>
-                <p class="caption"><a href="http://www.oculusvr.com/">Oculus Rift</a></p>
             </section>
 
             <section>
@@ -198,9 +224,10 @@ var leftTrans = vrHMD.getEyeTranslation('left');
             <section>
                 <h3>Add a dinosaur and...</h3>
             </section>
+            -->
 
             <section>
-                <h4>Oculus Rift TRex!</h4>
+                <h4>Oculus Rift Web TRex!</h4>
                 <video controls>
                     <source src="movies/trex-oculus-low.mp4" type="video/mp4;"/>
                 </video>
@@ -209,8 +236,7 @@ var leftTrans = vrHMD.getEyeTranslation('left');
             </section>
 
             <section>
-                <h3><a class="theme-colour" href="http://bit.ly/oculus-example">bit.ly/oculus-example</a></h3>
-                <h4>Code example from Google</h4>
+                <img class="tech-logo" src="img/css3-logo.png"/>
             </section>
 
             <section>
@@ -222,18 +248,21 @@ var leftTrans = vrHMD.getEyeTranslation('left');
             <!-- TODO CSS3D example -->
 
             <section>
-                <h3>What about Cardboard?</h3>
-                <img src="img/GoogleCardboardWithPhone-low.jpg" alt="Google Cardboard"/>
+                <h3>Google Cardboard</h3>
+                <img src="img/GoogleCardboardWithPhone-low-vignette.jpg" alt="Google Cardboard"/>
             </section>
 
             <section>
-                <h3 class="theme-colour">Web dev for Cardboard</h3>
+                <h3 class="theme-colour">Google Cardboard</h3>
                 <ul class="more-text">
                     <li>No WebVR support yet</li>
-                    <li>But we can use HTML5 Orientation API</li> <!-- And apply our own distortion if we want to... -->
+                    <li class="fragment">But we can use HTML5 Orientation API</li> <!-- And apply our own distortion if we want to... -->
+                    <li class="fragment">Three.js provides <em>DeviceOrientationControls</em></li>
+                    <li class="fragment">...and <em>StereoEffect</em></li>
                 </ul>
             </section>
 
+            <!--
             <section>
                 <pre><code class="javascript">var effect = new THREE.StereoEffect( renderer );
 
@@ -243,6 +272,7 @@ var controls = new THREE.DeviceOrientationControls(
         camera, true);
 </code></pre>
             </section>
+            -->
 
             <section>
                 <h4>Cardboard TRex! (Minus Cardboard)</h4>
@@ -253,12 +283,38 @@ var controls = new THREE.DeviceOrientationControls(
             </section>
 
             <section>
+                <h3>Code examples from Google</h3>
+                <h3><a class="theme-colour" href="http://bit.ly/oculus-example">bit.ly/oculus-example</a></h3>
                 <h3><a class="theme-colour" href="http://bit.ly/cardboard-example">bit.ly/cardboard-example</a></h3>
-                <h4>Code example from Google</h4>
             </section>
 
             <section>
-                <h3>Come &amp; try them out afterwards!</h3>
+                <h3 class="theme-colour bonus">Bonus!</h3>
+                <img src="img/unity-logo-trans-nopoweredby.png" alt="Unity"/>
+            </section>
+
+            <!-- Intro the fact we're an education company so interested in how VR could help people to learn, and ways it might be useful for educators... -->
+            <!--
+            <section>
+
+                <img width="80%" src="img/Pearson_Without_Strapline_Trans_LoRes.png" alt="Pearson"/>
+                <img width="70%" src="img/ft-h-white-trans.png" alt="Future Tech"/>
+            </section>
+            -->
+
+            <section>
+                <h4>Project Fishfinder</h4>
+                <!-- Project we worked on with Clinical Assessment team in Pearson (who develop psychometric tests and interventions for psychologists) -->
+                <!-- Idea came from research showing that Virtual Reality can be effective for treating things like phobias and post-traumatic stress disorder -->
+                <!-- An assessment and intervention tool for private practice psychologists working with early adolescents whom might be having problems with bullying -->
+                <!-- Allows an experience of bullying in a safe environment - psychologist can talk with them about how it made them feel, how they would react to it, etc. -->
+                <video controls>
+                    <source src="movies/fishfinder2.3.mp4" type="video/mp4;"/>
+                </video>
+            </section>
+
+            <section>
+                <h3>Say hi to T-rex afterwards!</h3>
                 <img src="img/trex-closeup.png" alt="TRex close-up"/>
             </section>
 
