@@ -1,6 +1,7 @@
 (function() {
 
-    var highContrastMode = false;
+    var SLIDE_BROWSER_LOGOS = 3,
+        highContrastMode = false;
 
     init();
 
@@ -8,11 +9,42 @@
 
         setupUserEvents();
 
+        setupSlideEvents();
+
     }
 
     function setupUserEvents() {
 
         document.addEventListener('keydown', onKeyDown, false);
+
+    }
+
+    function setupSlideEvents() {
+
+        Reveal.addEventListener('slidechanged', onSlideChanged);
+
+    }
+
+    function onSlideChanged() {
+
+        // Slide-specific animations...
+
+        var slideNumber = Reveal.getIndices().h;
+
+        if( slideNumber == SLIDE_BROWSER_LOGOS ) {
+
+            // wait a moment to ensure it takes effect
+            setTimeout(function() {
+                document.getElementById('ff-logo').classList.add( 'animate' );
+                document.getElementById('chrome-logo').classList.add( 'animate' );
+            }, 100);
+
+        } else {
+
+            document.getElementById('ff-logo').classList.remove( 'animate' );
+            document.getElementById('chrome-logo').classList.remove( 'animate' );
+
+        }
 
     }
 

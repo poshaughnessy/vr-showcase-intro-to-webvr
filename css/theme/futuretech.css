@@ -278,9 +278,20 @@ section.title h2 {
   margin-bottom: 1em; }
 
 .reveal section img.browser-logo {
-  width: 320px; }
+  width: 320px;
+  transition: transform linear 1.5s; }
   .reveal section img.browser-logo:nth-child(1) {
     margin-right: 10px; }
+
+#ff-logo {
+  transform: translateX(-1500px) rotate(-720deg); }
+  #ff-logo.animate {
+    transform: translateX(0) rotate(720deg); }
+
+#chrome-logo {
+  transform: translateX(1500px) rotate(720deg); }
+  #chrome-logo.animate {
+    transform: translateX(0) rotate(-720deg); }
 
 .reveal section img.tech-logo {
   height: 250px; }

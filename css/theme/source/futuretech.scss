@@ -229,13 +229,31 @@ section.title {
   }
 }
 
-// TODO roll in animation
 .reveal section img.browser-logo {
   width: 320px;
+  transition: transform linear 1.5s;
 
   &:nth-child(1) {
     margin-right: 10px;
   }
+}
+
+#ff-logo {
+  transform: translateX(-1500px) rotate(-720deg);
+
+  &.animate {
+    transform: translateX(0) rotate(720deg);
+  }
+
+}
+
+#chrome-logo {
+  transform: translateX(1500px) rotate(720deg);
+
+  &.animate {
+    transform: translateX(0) rotate(-720deg)
+  }
+
 }
 
 .reveal section img.tech-logo {
