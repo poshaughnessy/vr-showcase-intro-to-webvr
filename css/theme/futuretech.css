@@ -294,9 +294,24 @@ section.title h2 {
     transform: translateX(0) rotate(-720deg); }
 
 .reveal section img.tech-logo {
-  height: 250px; }
+  height: 250px;
+  transition: transform ease-in 1s, opacity linear 1s; }
   .reveal section img.tech-logo:nth-child(1) {
     margin-right: 30px; }
+
+#webgl-logo.grow,
+#webgl-logo2.grow {
+  transform: translateZ(150px) translateX(120px); }
+#webgl-logo.fade,
+#webgl-logo2.fade {
+  opacity: 0; }
+
+#css3-logo.grow,
+#css3-logo2.grow {
+  transform: translateZ(200px) translateX(-230px); }
+#css3-logo.fade,
+#css3-logo2.fade {
+  opacity: 0; }
 
 .reveal section img.browser-logo,
 .reveal section img.tech-logo {

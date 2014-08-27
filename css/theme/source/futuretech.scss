@@ -258,9 +258,35 @@ section.title {
 
 .reveal section img.tech-logo {
   height: 250px;
+  transition: transform ease-in 1s, opacity linear 1s;
 
   &:nth-child(1) {
     margin-right: 30px;
+  }
+}
+
+#webgl-logo,
+#webgl-logo2 {
+
+  &.grow {
+    transform: translateZ(150px) translateX(120px);
+  }
+
+  &.fade {
+    opacity: 0;
+  }
+
+}
+
+#css3-logo,
+#css3-logo2 {
+
+  &.grow {
+    transform: translateZ(200px) translateX(-230px);
+  }
+
+  &.fade {
+    opacity: 0;
   }
 }
 
