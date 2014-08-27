@@ -25,8 +25,8 @@ $headingColor: #333;
 $headingLetterSpacing: 0em;
 $headingTextShadow: none;
 $backgroundColor: #333;
-$headingColor: #ed174f;
-$linkColor: lighten( $headingColor, 10% );
+$themeColor: #ed174f;
+$linkColor: #aaa; //lighten( $headingColor, 10% );
 $linkColorHover: lighten( $linkColor, 10% );
 $navColor: #eee;
 $navColorHover: #fff;
@@ -57,6 +57,14 @@ body.high-contrast {
   color: $linkColorHover;
 }
 
+.reveal a.theme-colour:not(.image) {
+  color: $themeColor;
+}
+
+.reveal a.theme-colour:not(.image):hover {
+  color: lighten($themeColor, 10%);
+}
+
 .reveal h1,
 .reveal h2,
 .reveal h3,
@@ -65,6 +73,10 @@ body.high-contrast {
 .reveal h6 {
   color: #fff;
   text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+}
+
+.reveal .theme-colour {
+  color: $themeColor;
 }
 
 .reveal h2,
@@ -182,7 +194,7 @@ body.high-contrast {
 }
 
 .reveal .caption a {
-  color: #dee6e9;
+  color: $linkColor;
 }
 
 .reveal .medium-link {
@@ -203,10 +215,25 @@ section.title {
   h1 {
     margin-bottom: 80px;
     font-size: 3em;
-    color: $headingColor;
   }
   h2 {
     margin-bottom: 1em;
   }
 }
 
+// TODO roll in animation
+.reveal section img.browser-logo {
+  width: 320px;
+  display: inline;
+
+  &:nth-child(1) {
+    margin-right: 10px;
+  }
+
+}
+
+.reveal .threejs {
+  margin-top: 30px;
+  font-size: 3em;
+  font-family: 'Inconsolata';
+}

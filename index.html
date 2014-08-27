@@ -14,6 +14,7 @@
 
     <link rel="stylesheet" href="css/reveal.min.css">
     <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/theme/futuretech.css" id="theme">
 
     <!--[if lt IE 9]>
@@ -29,42 +30,60 @@
         <div class="slides">
 
             <section class="title">
-                <h1>Virtual Reality<br/> in the Browser</h1>
+                <h1 class="theme-colour">Virtual Reality<br/> in the Browser</h1>
                 <h2>An intro to WebVR</h2>
                 <p class="small">Peter O'Shaughnessy <span class="subtle">|</span> <a href="https://www.twitter.com/poshaughnessy">@poshaughnessy</a> <!--<span class="subtle">|</span> Press <strong>f</strong> for full screen, <strong>h</strong> for high contrast</p>-->
             </section>
 
             <section>
-                <!-- Intro the fact we're an education company so interested in how VR could help people to learn about things -->
+                <!-- Intro the fact we're an education company so interested in how VR could help people to learn, and ways it might be useful for educators... -->
                 <img width="80%" src="img/Pearson_Without_Strapline_Trans_LoRes.png" alt="Pearson"/>
                 <img width="70%" src="img/ft-h-white-trans.png" alt="Future Tech"/>
             </section>
 
             <section>
-                <h3>TODO show Fishfinder</h3>
+                <h4>Project Fishfinder</h4>
+                <!-- Project we worked on with Clinical Assessment team in Pearson (who develop psychometric tests and interventions for psychologists) -->
+                <!-- Idea came from research showing that Virtual Reality can be effective for treating things like phobias and post-traumatic stress disorder -->
+                <!-- An assessment and intervention tool for private practice psychologists working with early adolescents whom might be having problems with bullying -->
+                <!-- Allows an experience of bullying in a safe environment - psychologist can talk with them about how it made them feel, how they would react to it, etc. -->
+                <video controls>
+                    <source src="movies/fishfinder2.3.mp4" type="video/mp4;"/>
+                </video>
             </section>
 
             <section>
-                <h3>But what about the Web?</h3>
-                <!-- I don't know Unity... I don't know OpenGL... I'm rubbish with C++... Like a lot of people I'm mainly
-                <!-- a Web developer and I generally develop in JavaScript... -->
+                <img src="img/unity-logo-trans.png" alt="Unity"/>
+                <!-- Built with Unity which is great - but proprietary - I don't know Unity... there are many more Web developers... -->
             </section>
 
+            <!--
             <section>
-                <!-- Imagine if we could open up the tools to build VR experiences to Web developers -->
-                <!-- Imagine if the Web could evolve into an interconnected network of open worlds... -->
+                <h3><em>3.3 million</em> registered Unity developers<sup>1</sup></h3>
+                <h3 class="fragment"><em>8 million+</em> professional Web developers<sup>2</sup></h3>
+                <small>
+                    1. Number of registered developers <a href="http://unity3d.com/public-relations">courtesy of Unity Technologies</a><br/>
+                    2. Estimate <a href="http://www.jbidigital.co.uk/web-development/the-rise-of-web-developers-throughout-the-world/">from JBI Digital</a>
+                </small>
             </section>
+            -->
 
             <section>
-                <h3>It's the stuff of science fiction...</h3>
+                <h3>A Virtual Reality Web?</h3>
                 <div>
-                    <img src="img/universe_from_a_meadow_by_mind_criminal-d496i3j.png"/>
+                    <img src="img/universe_from_a_meadow_by_mind_criminal-d496i3j.jpg" alt="Strange world"/>
                     <p class="caption"><a href="http://mind-criminal.deviantart.com/art/Universe-From-a-Meadow-257284639">mind-criminal</a></p>
                 </div>
+                <!-- How about the Virtual Reality Web? -->
+                <!-- Imagine if we could make Virtual Reality a Web standard? And open up the tools to build VR experiences to all Web developers -->
+                <!-- Imagine if the Web could evolve into an interconnected network of open worlds... -->
+                <!-- It's the stuff of science fiction... -->
             </section>
 
             <section>
-                <h3>...But just in the last few weeks:</h3>
+                <!-- ...But just in the last few weeks... -->
+                <!--
+                <h3>Just in the last few weeks:</h3>
                 <div class="fragment">
                     <ul class="more-text">
                         <li><a href="http://blog.ludei.com/webgl-ios-8-safari-webview/">Apple embrace WebGL</a></li>
@@ -73,11 +92,14 @@
                         <li><a href="http://blog.tojicode.com/2014/07/bringing-vr-to-chrome.html">Google release VR Chrome builds</a></li>
                     </ul>
                 </div>
+                -->
+                <img class="browser-logo" src="img/Mozilla_Firefox_3.5_logo_256.png" alt="Firefox"/>
+                <img class="browser-logo" src="img/Google_Chrome_logo.png" alt="Chrome"/>
             </section>
 
             <section>
-                <h3>Browsers implementing:</h3>
-                <ul class="more-text fragment">
+                <h3 class="theme-colour">Browsers implementing:</h3>
+                <ul class="more-text">
                     <li>Device discovery</li>
                     <li>Full screen extensions</li>
                     <li>Sensor integration, e.g. orientation</li>
@@ -86,50 +108,39 @@
             </section>
 
             <section>
-                <h2>&ldquo;WebVR&rdquo;</h2>
+                <h2 class="theme-colour">&ldquo;WebVR&rdquo;</h2>
                 <ul class="more-text fragment">
                     <li>"Version Zero"</li>
                     <li>Not even in alpha channels yet</li>
                 </ul>
             </section>
 
+            <section>
+                <h2>5 minute guide to WebVR development</h2>
+            </section>
+
+            <section>
+                <img src="img/webgl-logo-colouradjust.png"/>
+                <h3 class="threejs">three.js</h3>
+            </section>
+
             <section data-transition="fadesibling">
-                <h3>WebGL</h3>
                 <img src="img/oculus-stereo-normal.jpg" alt="Stereo with no distortion"/>
                 <p class="caption"><a href="http://www.oculusvr.com/">Oculus Rift</a></p>
             </section>
 
             <section data-transition="fade">
-                <h3>WebGL</h3>
                 <img src="img/oculus-stereo-distortion.jpg" alt="Stereo with distortion for Oculus"/>
                 <p class="caption"><a href="http://www.oculusvr.com/">Oculus Rift</a></p>
             </section>
 
-            <section data-transition="fadesibling">
-                <h3>CSS 3D</h3>
-                <img src="img/css3d-globe.jpg" alt="CSS3D Globe"/>
-                <p class="caption"><a href="http://www.edankwan.com/lab/css3dEarth">edankwan.com</a></p>
-            </section>
-
             <section>
-                <h2>Code</h2>
-                <h3>Warning: APIs will change</h3>
-            </section>
-
-            <section data-transition="fadesibling">
+                <h4>Warning: API likely to change</h4>
                 <pre><code class="javascript">if( navigator.getVRDevices ) {
-    // Chrome
     navigator.getVRDevices().then( vrDeviceCallback );
-
-} else if( navigator.mozGetVRDevices ) {
-    // Firefox
-    navigator.mozGetVRDevices( vrDeviceCallback );
 }
-</code></pre>
-            </section>
 
-            <section data-transition="fadesibling">
-                <pre><code class="javascript">function vrDeviceCallback( vrDevices ) {
+function vrDeviceCallback( vrDevices ) {
     for( var i=0; i < vrDevices.length; i++ ) {
         // If instance of HMDVRDevice...
         // If instance of PositionSensorVRDevice...
@@ -157,7 +168,7 @@ var leftTrans = vrHMD.getEyeTranslation('left');
             </section>
 
             <section>
-                <h3>Add some Three.js and a dinosaur...</h3>
+                <h3>Add a dinosaur and...</h3>
             </section>
 
             <section data-transition="fadesibling">
@@ -170,41 +181,39 @@ var leftTrans = vrHMD.getEyeTranslation('left');
             </section>
 
             <section>
-                <h3><a href="http://bit.ly/oculus-example">bit.ly/oculus-example</a></h3>
+                <h3><a class="theme-colour" href="http://bit.ly/oculus-example">bit.ly/oculus-example</a></h3>
                 <h4>Code example from Google</h4>
             </section>
 
+            <section data-transition="fadesibling">
+                <h3>CSS 3D</h3>
+                <img src="img/css3d-globe.jpg" alt="CSS3D Globe"/>
+                <p class="caption"><a href="http://www.edankwan.com/lab/css3dEarth">edankwan.com</a></p>
+            </section>
+
+            <!-- TODO CSS3D example -->
+
             <section>
-                <h3>Google Cardboard</h3>
+                <h3>What about Cardboard?</h3>
                 <img src="img/GoogleCardboardWithPhone-low.jpg" alt="Google Cardboard"/>
             </section>
 
             <section>
-                <h3>Coding for Cardboard</h3>
-                <ul class="more-text fragment">
+                <h3 class="theme-colour">Web dev for Cardboard</h3>
+                <ul class="more-text">
                     <li>No WebVR support yet</li>
-                    <li>But we can do without it for now...</li>
+                    <li>But we can use HTML5 Orientation API</li> <!-- And apply our own distortion if we want to... -->
                 </ul>
             </section>
 
             <section data-transition="fadesibling">
                 <pre><code class="javascript">var effect = new THREE.StereoEffect( renderer );
+
 ...
-effect.render( scene, camera );
 
-
-
-                </code></pre>
-            </section>
-
-            <section data-transition="fadesibling">
-                <pre><code class="javascript">var controls = new THREE.DeviceOrientationControls(
+var controls = new THREE.DeviceOrientationControls(
         camera, true);
-
-controls.connect();
-...
-controls.update();
-                </code></pre>
+</code></pre>
             </section>
 
             <section data-transition="fadesibling">
@@ -216,21 +225,21 @@ controls.update();
             </section>
 
             <section>
-                <h3><a href="http://bit.ly/cardboard-example">bit.ly/cardboard-example</a></h3>
+                <h3><a class="theme-colour" href="http://bit.ly/cardboard-example">bit.ly/cardboard-example</a></h3>
                 <h4>Code example from Google</h4>
             </section>
 
             <section>
-                <h3>Come and try it out!</h3>
+                <h3>Come &amp; try them out afterwards!</h3>
                 <img src="img/trex-closeup.png" alt="TRex close-up"/>
             </section>
 
             <section>
-                <h3>Let's start hacking.</h3>
-                <div class="fragment">
+                <div>
                     <h2>Thank you.</h2>
-                    <p class="medium-link">Slides: <a href="http://bit.ly/interfaces-of-the-future">bit.ly/interfaces-of-the-future</a></p>
-                    <p class="medium-link">web-vr mailing list: <a href="http://bit.ly/web-vr-mailing-list">bit.ly/web-vr-mailing-list</a></p>
+                    <!--<p class="medium-link">Blog post: <a class="theme-colour" href="http://bit.ly/interfaces-of-the-future">bit.ly/interfaces-of-the-future</a></p>-->
+                    <p class="medium-link">web-vr mailing list: <a class="theme-colour" href="http://bit.ly/web-vr-mailing-list">bit.ly/web-vr-mailing-list</a></p>
+                    <p class="medium-link">me: <a class="theme-colour" href="http://www.twitter.com/poshaughnessy">@poshaughnessy</a></p>
                 </div>
             </section>
 
@@ -247,7 +256,7 @@ controls.update();
         // Full list of configuration options available here:
         // https://github.com/hakimel/reveal.js#configuration
         Reveal.initialize({
-            controls: true,
+            controls: false, //true,
             progress: false,
             history: true,
             center: true,

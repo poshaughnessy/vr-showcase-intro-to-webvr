@@ -22,3 +22,16 @@
   font-weight: 700;
   src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(/fonts/lato-bold-italic.woff) format('woff');
 }
+
+@font-face {
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Inconsolata Regular'), local('Inconsolata-Regular'), url(/fonts/Inconsolata/Inconsolata-Regular.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Inconsolata Bold'), local('Inconsolata-Bold'), url(/fonts/Inconsolata/Inconsolata-Bold.ttf) format('truetype');
+}

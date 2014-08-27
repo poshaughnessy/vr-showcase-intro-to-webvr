@@ -33,7 +33,7 @@ body {
 .reveal h5,
 .reveal h6 {
   margin: 0 0 20px 0;
-  color: #ed174f;
+  color: #333333;
   font-family: "Ubuntu", sans-serif;
   line-height: 0.9em;
   letter-spacing: 0em;
@@ -47,7 +47,7 @@ body {
  * LINKS
  *********************************************/
 .reveal a:not(.image) {
-  color: #f14673;
+  color: #aaaaaa;
   text-decoration: none;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
@@ -56,13 +56,13 @@ body {
   transition: color .15s ease; }
 
 .reveal a:not(.image):hover {
-  color: #f47697;
+  color: #c3c3c3;
   text-shadow: none;
   border: none; }
 
 .reveal .roll span:after {
   color: #fff;
-  background: #da1145; }
+  background: #848484; }
 
 /*********************************************
  * IMAGES
@@ -80,7 +80,7 @@ body {
 
 .reveal a:hover img {
   background: rgba(255, 255, 255, 0.2);
-  border-color: #f14673;
+  border-color: #aaaaaa;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
 
 /*********************************************
@@ -121,7 +121,7 @@ body {
   background: rgba(0, 0, 0, 0.2); }
 
 .reveal .progress span {
-  background: #f14673;
+  background: #aaaaaa;
   -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -ms-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
@@ -132,7 +132,7 @@ body {
  * SLIDE NUMBER
  *********************************************/
 .reveal .slide-number {
-  color: #f14673; }
+  color: #aaaaaa; }
 
 body.high-contrast {
   background-color: #000; }
@@ -143,10 +143,16 @@ body.high-contrast {
 
 .reveal a:not(.image) {
   line-height: 1.3em;
-  color: #f14673; }
+  color: #aaaaaa; }
 
 .reveal a:not(.image):hover {
-  color: #f47697; }
+  color: #c3c3c3; }
+
+.reveal a.theme-colour:not(.image) {
+  color: #ed174f; }
+
+.reveal a.theme-colour:not(.image):hover {
+  color: #f14673; }
 
 .reveal h1,
 .reveal h2,
@@ -156,6 +162,9 @@ body.high-contrast {
 .reveal h6 {
   color: #fff;
   text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2); }
+
+.reveal .theme-colour {
+  color: #ed174f; }
 
 .reveal h2,
 .reveal h3,
@@ -246,7 +255,7 @@ body.high-contrast {
   font-size: 0.4em; }
 
 .reveal .caption a {
-  color: #dee6e9; }
+  color: #aaaaaa; }
 
 .reveal .medium-link {
   font-size: 0.8em; }
@@ -259,7 +268,17 @@ body.high-contrast {
 
 section.title h1 {
   margin-bottom: 80px;
-  font-size: 3em;
-  color: #ed174f; }
+  font-size: 3em; }
 section.title h2 {
   margin-bottom: 1em; }
+
+.reveal section img.browser-logo {
+  width: 320px;
+  display: inline; }
+  .reveal section img.browser-logo:nth-child(1) {
+    margin-right: 10px; }
+
+.reveal .threejs {
+  margin-top: 30px;
+  font-size: 3em;
+  font-family: 'Inconsolata'; }

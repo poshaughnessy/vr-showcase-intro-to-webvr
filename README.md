@@ -9,6 +9,11 @@ A presentation I'm preparing for the [VR Showcase meetup](http://www.meetup.com/
 * eyeon Software Inc. for the use of their skymap in the demo
 
 
+## 3D model credits
+
+* dancg, BlendSwap http://www.blendswap.com/blends/view/73732
+
+
 ## Image credits
 
 * Netscape Navigator, [Wikipedia](http://en.wikipedia.org/wiki/File:Netscape_Navigator.png)
