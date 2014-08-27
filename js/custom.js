@@ -37,7 +37,7 @@
             setTimeout(function() {
                 document.getElementById('ff-logo').classList.add( 'animate' );
                 document.getElementById('chrome-logo').classList.add( 'animate' );
-            }, 100);
+            }, 50);
 
         } else {
 
