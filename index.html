@@ -69,14 +69,16 @@
             -->
 
             <section>
-                <h3>A Virtual Reality Web?</h3>
+                <h3>The Virtual Reality Web?</h3>
                 <div>
                     <img src="img/universe_from_a_meadow_by_mind_criminal-d496i3j.jpg" alt="Strange world"/>
                     <p class="caption"><a href="http://mind-criminal.deviantart.com/art/Universe-From-a-Meadow-257284639">mind-criminal</a></p>
                 </div>
                 <!-- How about the Virtual Reality Web? -->
                 <!-- Imagine if we could make Virtual Reality a Web standard? And open up the tools to build VR experiences to all Web developers -->
-                <!-- Imagine if the Web could evolve into an interconnected network of open worlds... -->
+                <!-- Imagine the power of Virtual Reality combined with the power of the URL -->
+                <!-- Imagine hopping from website to website in Virtual Reality - if those websites were actually immersive 3d experiences -->
+                <!-- It would be like a network of interconnected worlds... -->
                 <!-- It's the stuff of science fiction... -->
             </section>
 
@@ -124,7 +126,33 @@
                 <h3 class="threejs">three.js</h3>
             </section>
 
-            <section data-transition="fadesibling">
+            <section>
+                <pre><code class="javascript">
+var ground = new THREE.Mesh(
+    new THREE.PlaneGeometry( ... ),
+    new THREE.MeshPhongMaterial( ... ));
+
+scene.add( ground );
+                </code></pre>
+            </section>
+
+            <section>
+                <pre><code class="javascript">loader.load('dinosaur.js',
+        function(geometry, materials) {
+
+    dino = new THREE.Mesh(
+        geometry,
+        new THREE.MeshFaceMaterial( materials ) );
+
+    scene.add( dino );
+});</code></pre>
+            </section>
+
+            <section>
+                <img src="img/webvr-stage1-threejs.png" alt="Three.js scene"/>
+            </section>
+
+            <section>
                 <img src="img/oculus-stereo-normal.jpg" alt="Stereo with no distortion"/>
                 <p class="caption"><a href="http://www.oculusvr.com/">Oculus Rift</a></p>
             </section>
@@ -148,7 +176,7 @@ function vrDeviceCallback( vrDevices ) {
 }</code></pre>
             </section>
 
-            <section data-transition="fadesibling">
+            <section>
                 <pre><code class="javascript">var leftFOV =
     vrHMD.getRecommendedEyeFieldOfView('left');
 
@@ -156,7 +184,7 @@ var leftTrans = vrHMD.getEyeTranslation('left');
                 </code></pre>
             </section>
 
-            <section data-transition="fadesibling">
+            <section>
                 <pre><code class="javascript">if( canvas.webkitRequestFullscreen ) {
     canvas.webkitRequestFullscreen({
         vrDisplay: hmdDevice });
@@ -171,7 +199,7 @@ var leftTrans = vrHMD.getEyeTranslation('left');
                 <h3>Add a dinosaur and...</h3>
             </section>
 
-            <section data-transition="fadesibling">
+            <section>
                 <h4>Oculus Rift TRex!</h4>
                 <video controls>
                     <source src="movies/trex-oculus-low.mp4" type="video/mp4;"/>
@@ -185,7 +213,7 @@ var leftTrans = vrHMD.getEyeTranslation('left');
                 <h4>Code example from Google</h4>
             </section>
 
-            <section data-transition="fadesibling">
+            <section>
                 <h3>CSS 3D</h3>
                 <img src="img/css3d-globe.jpg" alt="CSS3D Globe"/>
                 <p class="caption"><a href="http://www.edankwan.com/lab/css3dEarth">edankwan.com</a></p>
@@ -206,7 +234,7 @@ var leftTrans = vrHMD.getEyeTranslation('left');
                 </ul>
             </section>
 
-            <section data-transition="fadesibling">
+            <section>
                 <pre><code class="javascript">var effect = new THREE.StereoEffect( renderer );
 
 ...
@@ -216,7 +244,7 @@ var controls = new THREE.DeviceOrientationControls(
 </code></pre>
             </section>
 
-            <section data-transition="fadesibling">
+            <section>
                 <h4>Cardboard TRex! (Minus Cardboard)</h4>
                 <video controls>
                     <source src="movies/trex-cardboard-low.mp4" type="video/mp4;"/>
