@@ -180,9 +180,6 @@ body.high-contrast {
   font-size: 2em;
   line-height: 1.2em; }
 
-.reveal .title h2 {
-  line-height: 1em; }
-
 .reveal p.small {
   font-size: 0.6em; }
 
@@ -269,13 +266,17 @@ body.high-contrast {
   margin-bottom: 15px; }
 
 section.title h1 {
-  margin-bottom: 80px;
-  font-size: 3em;
-  line-height: 1.1em; }
+  font-size: 5em;
+  line-height: 1em; }
   section.title h1 span {
     display: block; }
 section.title h2 {
-  margin-bottom: 1em; }
+  margin-bottom: 1em;
+  line-height: 1em;
+  font-size: 1.4em; }
+section.title h5 {
+  letter-spacing: 10px;
+  margin-bottom: 15px; }
 
 .reveal section img.browser-logo {
   width: 320px;

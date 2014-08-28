@@ -97,10 +97,6 @@ body.high-contrast {
   line-height: 1.2em;
 }
 
-.reveal .title h2 {
-  line-height: 1em;
-}
-
 .reveal p.small {
   font-size: 0.6em;
 }
@@ -217,16 +213,22 @@ body.high-contrast {
 
 section.title {
   h1 {
-    margin-bottom: 80px;
-    font-size: 3em;
-    line-height: 1.1em;
+    font-size: 5em;
+    line-height: 1em;
     span {
       display: block;
     }
   }
   h2 {
     margin-bottom: 1em;
+    line-height: 1em;
+    font-size: 1.4em;
   }
+  h5 {
+    letter-spacing: 10px;
+    margin-bottom: 15px;
+  }
+
 }
 
 .reveal section img.browser-logo {
